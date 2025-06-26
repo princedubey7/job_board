@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Job Board</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <h1>Job Board</h1>
+    <input type="text" id="searchInput" placeholder="Search job title or location..." />
+    <div id="userSection">
+      <button id="loginBtn">Login</button>
+      <button id="logoutBtn" style="display: none;">Logout</button>
+    </div>
+  </header>
+
+  <main id="jobList" class="job-list"></main>
+
+  <section class="add-job-form">
+    <h2>Add New Job (Only logged in users)</h2>
+    <input type="text" id="jobTitle" placeholder="Job Title" />
+    <input type="text" id="company" placeholder="Company" />
+    <input type="text" id="location" placeholder="Location" />
+    <input type="number" id="salary" placeholder="Salary (per month)" />
+    <textarea id="description" placeholder="Job Description"></textarea>
+    <button onclick="addJob()">Add Job</button>
+  </section>
+
+  <!-- Login/Register Modal -->
+  <div id="authModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="toggleModal(false)">&times;</span>
+      <h2>Login / Register</h2>
+      <input type="text" id="authEmail" placeholder="Email" />
+      <input type="password" id="authPassword" placeholder="Password" />
+      <button onclick="register()">Register</button>
+      <button onclick="login()">Login</button>
+    </div>
+  </div>
+  <!-- Apply Modal -->
+<div id="applyModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeApplyModal()">&times;</span>
+    <h2>Apply for Job</h2>
+    <input type="text" id="applicantName" placeholder="Your Name" />
+    <input type="email" id="applicantEmail" placeholder="Your Email" />
+    <input type="url" id="resumeLink" placeholder="Resume Link (Google Drive/LinkedIn/etc.)" />
+    <button onclick="submitApplication()">Submit Application</button>
+  </div>
+</div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
